@@ -1,48 +1,59 @@
-export function About() {
+const About = () => {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-6">Our Story</h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Founded in 2010, Café Aroma began as a small corner shop with a big dream: to create a space where coffee isn't just served, but celebrated. Our founder, Emma, spent years traveling the world to study coffee cultivation and brewing techniques.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
+            <div className="w-24 h-1 bg-amber-800 mb-6"></div>
+            <p className="text-lg text-gray-600 mb-6">
+              Founded in 2015, Brew Haven began as a small passion project by two friends who shared a love for exceptional coffee and creating community spaces.
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Today, we source our beans directly from sustainable farms across the globe, ensuring fair prices for farmers and exceptional quality for our customers. Every cup tells a story of passion, craftsmanship, and community.
+            <p className="text-lg text-gray-600 mb-6">
+              Today, we continue to source the finest beans from ethical farms around the world, roasting them in small batches to ensure the perfect cup every time.
             </p>
-            <div className="flex items-center">
-              <img 
-                src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" 
-                alt="Founder" 
-                className="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <p className="font-medium text-gray-900">Emma Thompson</p>
-                <p className="text-sm text-gray-600">Founder & Head Barista</p>
+            <p className="text-lg text-gray-600">
+              Our cafe is more than just a place to grab coffee – it's a hub for creativity, conversation, and connection. We're proud to be a part of this vibrant community.
+            </p>
+            
+            <div className="mt-8 grid grid-cols-3 gap-4">
+              <div className="text-center">
+                <h3 className="text-4xl font-bold text-amber-800">7+</h3>
+                <p className="text-gray-600">Years of Service</p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-4xl font-bold text-amber-800">12</h3>
+                <p className="text-gray-600">Coffee Origins</p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-4xl font-bold text-amber-800">5k+</h3>
+                <p className="text-gray-600">Happy Customers</p>
               </div>
             </div>
           </div>
-          <div className="md:w-1/2">
-            <div className="grid grid-cols-2 gap-4">
+          
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
               <img 
-                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Coffee beans" 
                 className="rounded-lg h-64 w-full object-cover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                alt="Coffee shop" 
-                className="rounded-lg h-64 w-full object-cover"
+                src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Cafe interior" 
+                className="rounded-lg h-48 w-full object-cover"
+              />
+            </div>
+            <div className="space-y-4 mt-8">
+              <img 
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Barista making coffee" 
+                className="rounded-lg h-48 w-full object-cover"
               />
               <img 
-                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                alt="Barista" 
-                className="rounded-lg h-64 w-full object-cover"
-              />
-              <img 
-                src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-                alt="Coffee cup" 
+                src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                alt="Coffee art" 
                 className="rounded-lg h-64 w-full object-cover"
               />
             </div>
@@ -51,4 +62,6 @@ export function About() {
       </div>
     </section>
   );
-}
+};
+
+export default About;

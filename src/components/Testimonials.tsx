@@ -1,65 +1,57 @@
-import { Star } from "lucide-react";
-
 const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
-    role: "Coffee Enthusiast",
-    content: "The atmosphere is cozy and inviting, and their signature latte is absolutely divine. I come here every morning before work!",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+    role: "Local Artist",
+    quote: "Brew Haven is my second home. The atmosphere is perfect for creativity, and their cappuccino is the best I've ever had!",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 2,
     name: "Michael Chen",
-    role: "Food Blogger",
-    content: "Their pastries are made fresh daily and you can really taste the difference. The staff is friendly and the coffee is consistently excellent.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+    role: "Tech Entrepreneur",
+    quote: "I've had meetings here for years. The staff remembers my order and the quiet corner tables are perfect for business discussions.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Local Resident",
-    content: "This café has become my second home. The wifi is reliable for working, and they remember my order every time. Highly recommend!",
-    rating: 4,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+    name: "Emma Rodriguez",
+    role: "Food Blogger",
+    quote: "Their seasonal pastries are worth the trip alone! Paired with their ethically sourced coffee, it's an experience you can't miss.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
   }
 ];
 
-export function Testimonials() {
+const Testimonials = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-amber-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">What Our Customers Say</h2>
-          <p className="text-lg text-amber-700 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our regular customers
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+          <div className="w-24 h-1 bg-white mx-auto"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-amber-50 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className={`h-5 w-5 ${i < testimonial.rating ? 'text-amber-500 fill-amber-500' : 'text-gray-300'}`} 
-                  />
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
-              <div className="flex items-center">
+            <div key={testimonial.id} className="bg-amber-900/50 p-8 rounded-lg">
+              <div className="flex items-center mb-6">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name} 
-                  className="w-12 h-12 rounded-full object-cover mr-4"
+                  className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <p className="font-medium text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <h3 className="font-bold text-lg">{testimonial.name}</h3>
+                  <p className="text-amber-200">{testimonial.role}</p>
                 </div>
+              </div>
+              <p className="italic text-amber-100">"{testimonial.quote}"</p>
+              <div className="mt-4 flex">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                ))}
               </div>
             </div>
           ))}
@@ -67,4 +59,6 @@ export function Testimonials() {
       </div>
     </section>
   );
-}
+};
+
+export default Testimonials;
