@@ -1,58 +1,33 @@
 import { Button } from "@/components/ui/button";
-import { Coffee, Clock, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-export function Hero() {
+const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" 
-          alt="Café interior" 
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="relative h-screen flex items-center">
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0" 
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')",
+          filter: "brightness(0.65)"
+        }}
+      ></div>
       
-      {/* Content */}
-      <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-          Experience the Perfect <span className="text-amber-400">Coffee</span> Moment
-        </h1>
-        <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Artisanal coffee, freshly baked pastries, and a cozy atmosphere to make your day better.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button className="bg-amber-800 hover:bg-amber-700 text-white text-lg py-6 px-8">
-            View Our Menu
-          </Button>
-          <Button variant="outline" className="border-white text-white hover:bg-white/10 text-lg py-6 px-8">
-            Reserve a Table
-          </Button>
-        </div>
-        
-        {/* Info cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center">
-            <Coffee className="text-amber-400 mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Premium Coffee</h3>
-            <p className="text-white/80 text-sm">Sourced from the finest beans</p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center">
-            <Clock className="text-amber-400 mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Opening Hours</h3>
-            <p className="text-white/80 text-sm">Mon-Sun: 7:00 AM - 10:00 PM</p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg flex flex-col items-center">
-            <MapPin className="text-amber-400 mb-3" size={32} />
-            <h3 className="text-white font-semibold text-lg">Location</h3>
-            <p className="text-white/80 text-sm">123 Coffee Street, Brewville</p>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-2xl text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">Experience the Perfect Blend</h1>
+          <p className="text-xl mb-8">Artisanal coffee, delicious pastries, and a cozy atmosphere in the heart of the city.</p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-6 text-lg">
+              View Our Menu
+            </Button>
+            <Button variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
+              Reserve a Table <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Hero;

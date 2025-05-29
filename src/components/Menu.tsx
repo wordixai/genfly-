@@ -1,110 +1,77 @@
-import { Coffee, Utensils } from "lucide-react";
-
-const coffeeItems = [
+const menuItems = [
   {
-    name: "Espresso",
-    description: "Rich and intense shot of pure coffee essence",
-    price: "$3.50",
+    category: "Coffee",
+    items: [
+      { name: "Espresso", description: "Pure and intense coffee experience", price: "$3.50" },
+      { name: "Cappuccino", description: "Espresso with steamed milk and foam", price: "$4.50" },
+      { name: "Latte", description: "Espresso with a lot of steamed milk and light foam", price: "$4.75" },
+      { name: "Americano", description: "Espresso diluted with hot water", price: "$3.75" },
+      { name: "Mocha", description: "Espresso with chocolate and steamed milk", price: "$5.25" }
+    ]
   },
   {
-    name: "Cappuccino",
-    description: "Equal parts espresso, steamed milk, and milk foam",
-    price: "$4.75",
+    category: "Pastries",
+    items: [
+      { name: "Croissant", description: "Buttery, flaky pastry", price: "$3.25" },
+      { name: "Cinnamon Roll", description: "Sweet roll with cinnamon-sugar filling", price: "$4.25" },
+      { name: "Blueberry Muffin", description: "Moist muffin loaded with blueberries", price: "$3.75" },
+      { name: "Chocolate Chip Cookie", description: "Soft cookie with chocolate chunks", price: "$2.75" },
+      { name: "Almond Danish", description: "Flaky pastry with almond cream filling", price: "$4.50" }
+    ]
   },
   {
-    name: "Latte",
-    description: "Espresso with steamed milk and a light layer of foam",
-    price: "$4.95",
-  },
-  {
-    name: "Mocha",
-    description: "Espresso with chocolate, steamed milk, and whipped cream",
-    price: "$5.25",
-  },
+    category: "Light Meals",
+    items: [
+      { name: "Avocado Toast", description: "Sourdough toast with smashed avocado and toppings", price: "$8.50" },
+      { name: "Caprese Sandwich", description: "Fresh mozzarella, tomato, and basil on ciabatta", price: "$9.25" },
+      { name: "Quinoa Bowl", description: "Nutritious bowl with seasonal vegetables", price: "$10.50" },
+      { name: "Chicken Wrap", description: "Grilled chicken with greens and house dressing", price: "$9.75" },
+      { name: "Soup of the Day", description: "Made fresh daily with seasonal ingredients", price: "$6.25" }
+    ]
+  }
 ];
 
-const foodItems = [
-  {
-    name: "Avocado Toast",
-    description: "Sourdough bread with smashed avocado, cherry tomatoes, and microgreens",
-    price: "$9.50",
-  },
-  {
-    name: "Croissant",
-    description: "Buttery, flaky pastry served with jam and butter",
-    price: "$3.95",
-  },
-  {
-    name: "Breakfast Sandwich",
-    description: "Egg, cheese, and bacon on a toasted brioche bun",
-    price: "$7.95",
-  },
-  {
-    name: "Acai Bowl",
-    description: "Blended acai topped with granola, fresh fruits, and honey",
-    price: "$10.95",
-  },
-];
-
-export function Menu() {
+const Menu = () => {
   return (
-    <section id="menu" className="py-24 bg-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="menu" className="py-20">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Our Menu</h2>
-          <p className="text-lg text-amber-700/70 max-w-2xl mx-auto">
-            Discover our carefully crafted selection of coffee and food items made with the finest ingredients
+          <p className="text-lg text-amber-700 max-w-3xl mx-auto">
+            Carefully crafted selections to delight your taste buds
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Coffee Menu */}
-          <div>
-            <div className="flex items-center mb-8">
-              <Coffee className="text-amber-800 mr-3" size={28} />
-              <h3 className="text-2xl font-semibold text-amber-800">Coffee</h3>
-            </div>
-            
-            <div className="space-y-8">
-              {coffeeItems.map((item, index) => (
-                <div key={index} className="flex justify-between border-b border-amber-200 pb-4">
-                  <div>
-                    <h4 className="text-xl font-medium text-amber-900">{item.name}</h4>
-                    <p className="text-amber-700/70 mt-1">{item.description}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {menuItems.map((category, index) => (
+            <div key={index} className="bg-white p-8 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold text-amber-800 mb-6 pb-3 border-b border-amber-200">
+                {category.category}
+              </h3>
+              
+              <div className="space-y-6">
+                {category.items.map((item, itemIndex) => (
+                  <div key={itemIndex}>
+                    <div className="flex justify-between items-baseline mb-1">
+                      <h4 className="text-lg font-semibold text-amber-900">{item.name}</h4>
+                      <span className="text-amber-800 font-medium">{item.price}</span>
+                    </div>
+                    <p className="text-gray-600 text-sm">{item.description}</p>
                   </div>
-                  <span className="text-lg font-semibold text-amber-800">{item.price}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          
-          {/* Food Menu */}
-          <div>
-            <div className="flex items-center mb-8">
-              <Utensils className="text-amber-800 mr-3" size={28} />
-              <h3 className="text-2xl font-semibold text-amber-800">Food</h3>
-            </div>
-            
-            <div className="space-y-8">
-              {foodItems.map((item, index) => (
-                <div key={index} className="flex justify-between border-b border-amber-200 pb-4">
-                  <div>
-                    <h4 className="text-xl font-medium text-amber-900">{item.name}</h4>
-                    <p className="text-amber-700/70 mt-1">{item.description}</p>
-                  </div>
-                  <span className="text-lg font-semibold text-amber-800">{item.price}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
         
-        <div className="text-center mt-16">
-          <p className="text-amber-700 italic">
-            * All our coffee beans are ethically sourced and locally roasted
+        <div className="mt-12 text-center">
+          <p className="text-gray-600 italic">
+            * All our items are prepared fresh daily. Menu items may vary based on seasonal availability.
           </p>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Menu;
