@@ -1,80 +1,60 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Instagram, Facebook, Twitter } from "lucide-react";
 
-const Footer = () => {
+export function Footer() {
   return (
-    <footer className="bg-amber-900 text-amber-100 pt-12 pb-6">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Café Aroma</h3>
-            <p className="text-amber-200 mb-4">
-              A cozy corner in the city where coffee meets craftsmanship and community.
-            </p>
+    <footer className="bg-amber-900 text-amber-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-1">
+            <h3 className="text-2xl font-bold mb-4">Café Aroma</h3>
+            <p className="mb-4">Crafting perfect moments, one cup at a time.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
+              <a href="#" className="text-amber-200 hover:text-white">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-amber-200 hover:text-white transition-colors">
+              <a href="#" className="text-amber-200 hover:text-white">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-amber-200 hover:text-white">
                 <Twitter size={20} />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-amber-200 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#menu" className="text-amber-200 hover:text-white transition-colors">Menu</a></li>
-              <li><a href="#gallery" className="text-amber-200 hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="#contact" className="text-amber-200 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#home" className="hover:text-white">Home</a></li>
+              <li><a href="#menu" className="hover:text-white">Menu</a></li>
+              <li><a href="#about" className="hover:text-white">About Us</a></li>
+              <li><a href="#location" className="hover:text-white">Location</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Hours</h3>
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li className="flex justify-between">
-                <span>Monday - Friday</span>
-                <span>7AM - 8PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span>8AM - 9PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span>8AM - 9PM</span>
-              </li>
+              <li>123 Coffee Street</li>
+              <li>New York, NY 10001</li>
+              <li>(555) 123-4567</li>
+              <li>hello@cafearoma.com</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="text-amber-200 mb-4">
-              Subscribe to get updates on events, special offers and more.
-            </p>
-            <div className="flex">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="px-4 py-2 rounded-l-md text-gray-800 w-full focus:outline-none"
-              />
-              <button className="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-md transition-colors">
-                Subscribe
-              </button>
-            </div>
+            <h4 className="text-lg font-semibold mb-4">Hours</h4>
+            <ul className="space-y-2">
+              <li>Monday - Friday: 7am - 8pm</li>
+              <li>Saturday - Sunday: 8am - 9pm</li>
+              <li>Happy Hour: 3pm - 5pm daily</li>
+            </ul>
           </div>
         </div>
         
-        <div className="border-t border-amber-800 pt-6 text-center text-amber-300 text-sm">
+        <div className="border-t border-amber-800 mt-12 pt-8 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} Café Aroma. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
