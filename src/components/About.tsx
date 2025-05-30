@@ -1,54 +1,50 @@
-import { Coffee, Clock, Award } from "lucide-react";
-
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-amber-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" 
-              alt="Cafe interior" 
-              className="rounded-lg shadow-xl w-full h-auto object-cover"
-            />
-            <div className="absolute -bottom-6 -right-6 bg-amber-600 text-white p-6 rounded-lg shadow-lg hidden md:block">
-              <p className="font-bold text-xl">Est. 2015</p>
-              <p>7+ Years of Excellence</p>
-            </div>
+    <section id="about" className="py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
+            <div className="w-24 h-1 bg-amber-800 mb-6"></div>
+            <p className="text-gray-600 mb-6">
+              Founded in 2015, Café Aroma began with a simple mission: to create a warm, welcoming space where people could enjoy exceptional coffee and food while connecting with others or finding a moment of peace in their busy day.
+            </p>
+            <p className="text-gray-600 mb-6">
+              Our founder, Emma Chen, spent years traveling the world and experiencing coffee cultures across continents before bringing her passion back home. Every cup we serve carries that global inspiration while supporting local farmers and sustainable practices.
+            </p>
+            <p className="text-gray-600">
+              Today, we're proud to be a neighborhood staple, where regulars are greeted by name and newcomers quickly feel like part of our extended family. We believe in the power of good food, great coffee, and genuine community.
+            </p>
           </div>
           
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">A Cozy Corner in the Heart of the City</h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Founded in 2015, Brew & Bites began as a small passion project by two coffee enthusiasts who wanted to create a space where quality coffee meets delicious food in a warm, welcoming atmosphere.
-            </p>
-            <p className="text-gray-700 mb-8 leading-relaxed">
-              Today, we're proud to be a neighborhood favorite, serving ethically sourced coffee and locally inspired dishes. Our café is more than just a place to eat and drink—it's a community hub where connections are made and stories are shared.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                <Coffee className="h-10 w-10 text-amber-600 mb-2" />
-                <h4 className="font-bold text-gray-900">Premium Coffee</h4>
-                <p className="text-sm text-gray-600">Ethically sourced beans</p>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                <Clock className="h-10 w-10 text-amber-600 mb-2" />
-                <h4 className="font-bold text-gray-900">Open Daily</h4>
-                <p className="text-sm text-gray-600">7AM - 8PM</p>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg shadow-md">
-                <Award className="h-10 w-10 text-amber-600 mb-2" />
-                <h4 className="font-bold text-gray-900">Award Winning</h4>
-                <p className="text-sm text-gray-600">Best local café 2023</p>
-              </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="Café interior" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg mt-8">
+              <img 
+                src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="Coffee brewing" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="Coffee beans" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="overflow-hidden rounded-lg mt-8">
+              <img 
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                alt="Café pastries" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
