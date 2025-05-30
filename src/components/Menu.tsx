@@ -2,61 +2,61 @@ const menuItems = [
   {
     category: "Coffee",
     items: [
-      { name: "Espresso", description: "Pure and intense coffee experience", price: "$3.50" },
-      { name: "Cappuccino", description: "Espresso with steamed milk and foam", price: "$4.50" },
-      { name: "Latte", description: "Espresso with a lot of steamed milk and light foam", price: "$4.75" },
-      { name: "Americano", description: "Espresso diluted with hot water", price: "$3.75" },
-      { name: "Mocha", description: "Espresso with chocolate and steamed milk", price: "$5.25" }
+      { name: "Espresso", price: "$3.50", description: "Strong and pure coffee shot" },
+      { name: "Cappuccino", price: "$4.50", description: "Espresso with steamed milk and foam" },
+      { name: "Latte", price: "$4.75", description: "Espresso with lots of steamed milk and light foam" },
+      { name: "Mocha", price: "$5.25", description: "Espresso with chocolate and steamed milk" }
+    ]
+  },
+  {
+    category: "Breakfast",
+    items: [
+      { name: "Avocado Toast", price: "$8.95", description: "Sourdough bread with smashed avocado, cherry tomatoes, and microgreens" },
+      { name: "Breakfast Burrito", price: "$10.50", description: "Scrambled eggs, black beans, cheese, and salsa in a flour tortilla" },
+      { name: "Granola Bowl", price: "$7.95", description: "House-made granola with Greek yogurt and seasonal fruits" },
+      { name: "Eggs Benedict", price: "$12.95", description: "Poached eggs on English muffin with hollandaise sauce" }
     ]
   },
   {
     category: "Pastries",
     items: [
-      { name: "Croissant", description: "Buttery, flaky pastry", price: "$3.25" },
-      { name: "Cinnamon Roll", description: "Sweet roll with cinnamon-sugar filling", price: "$4.25" },
-      { name: "Blueberry Muffin", description: "Moist muffin loaded with blueberries", price: "$3.75" },
-      { name: "Chocolate Chip Cookie", description: "Soft cookie with chocolate chunks", price: "$2.75" },
-      { name: "Almond Danish", description: "Flaky pastry with almond cream filling", price: "$4.50" }
-    ]
-  },
-  {
-    category: "Light Meals",
-    items: [
-      { name: "Avocado Toast", description: "Sourdough toast with smashed avocado and toppings", price: "$8.50" },
-      { name: "Caprese Sandwich", description: "Fresh mozzarella, tomato, and basil on ciabatta", price: "$9.25" },
-      { name: "Quinoa Bowl", description: "Nutritious bowl with seasonal vegetables", price: "$10.50" },
-      { name: "Chicken Wrap", description: "Grilled chicken with greens and house dressing", price: "$9.75" },
-      { name: "Soup of the Day", description: "Made fresh daily with seasonal ingredients", price: "$6.25" }
+      { name: "Croissant", price: "$3.95", description: "Buttery, flaky French pastry" },
+      { name: "Cinnamon Roll", price: "$4.50", description: "Soft roll with cinnamon-sugar filling and cream cheese frosting" },
+      { name: "Blueberry Muffin", price: "$3.75", description: "Moist muffin loaded with fresh blueberries" },
+      { name: "Chocolate Chip Cookie", price: "$2.95", description: "Soft-baked cookie with dark chocolate chunks" }
     ]
   }
 ];
 
 const Menu = () => {
   return (
-    <section id="menu" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="menu" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Our Menu</h2>
-          <p className="text-lg text-amber-700 max-w-3xl mx-auto">
-            Carefully crafted selections to delight your taste buds
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Menu</h2>
+          <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            We take pride in serving high-quality, fresh ingredients prepared with care. Our menu changes seasonally to showcase the best local produce.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {menuItems.map((category, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold text-amber-800 mb-6 pb-3 border-b border-amber-200">
-                {category.category}
-              </h3>
-              
-              <div className="space-y-6">
+            <div key={index} className="bg-amber-50 rounded-lg shadow-md overflow-hidden">
+              <div className="bg-amber-800 text-white py-4 px-6">
+                <h3 className="text-xl font-bold">{category.category}</h3>
+              </div>
+              <div className="p-6">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex}>
-                    <div className="flex justify-between items-baseline mb-1">
-                      <h4 className="text-lg font-semibold text-amber-900">{item.name}</h4>
-                      <span className="text-amber-800 font-medium">{item.price}</span>
+                  <div key={itemIndex} className="mb-6 last:mb-0">
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-bold text-gray-900">{item.name}</h4>
+                      <span className="text-amber-600 font-medium">{item.price}</span>
                     </div>
                     <p className="text-gray-600 text-sm">{item.description}</p>
+                    {itemIndex < category.items.length - 1 && (
+                      <div className="border-b border-gray-200 my-4"></div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -64,10 +64,11 @@ const Menu = () => {
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 italic">
-            * All our items are prepared fresh daily. Menu items may vary based on seasonal availability.
-          </p>
+        <div className="text-center mt-12">
+          <p className="text-gray-600 italic mb-4">* Prices subject to change. Please inform your server of any allergies.</p>
+          <a href="#" className="inline-block text-amber-600 font-medium hover:text-amber-800 hover:underline">
+            View Full Menu PDF →
+          </a>
         </div>
       </div>
     </section>
